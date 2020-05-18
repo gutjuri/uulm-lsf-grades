@@ -1,0 +1,12 @@
+#!/bin/sh
+
+set -x
+touch grades.txt
+ruby grades.rb > grades.new.txt
+cmp grades.new.txt grades.txt
+
+if [ "$?" = 1 ]; then
+  ruby sendmail.rb $@
+fi
+
+mv grades.new.txt grades.txt

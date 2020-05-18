@@ -14,6 +14,12 @@ Fill in your information in credentials.rb (optional, if you don't want to store
 
 Then execute `ruby grades.rb`.
 
+## Get notified on new grades
+
+Simply add a cronjob, e.g. `0 * * * * cd /home/yeet/git/uulm-lsf-grades && ./checkupdates recipient@mail.com sender@mail.com senderpassword`
+
+Don't forget to update your mail account information in sendmail.rb. You can also find a more secure means to provide your email account credentials to the script if you like.
+
 ## Disclaimers
 
 - This doesn't steal your account information (check the source code).
