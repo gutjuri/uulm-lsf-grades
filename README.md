@@ -10,7 +10,7 @@ Get your grades on the command line!
 
 ## Usage
 
-Fill in your information in credentials.rb.
+Fill in your information in credentials.rb (optional, if you don't want to store your credentials in a file you can skip this and get prompted at runtime).
 
 Then execute `ruby grades.rb`.
 

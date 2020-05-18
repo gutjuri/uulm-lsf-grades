@@ -1,11 +1,29 @@
 require 'open-uri'
 require 'net/http'
 require 'nokogiri'
+require 'io/console'
 require_relative 'credentials.rb'
 
 def url_from_html(html, name)
   URI.parse(Nokogiri::HTML.parse(html).xpath("//a[text() = \"#{name}\"]/@href").to_s)
 end
+
+if $username.nil? 
+  print "KIZ-username: "
+  $username = gets.chomp
+end
+
+if $password.nil?
+  print "KIZ-password: "
+  $password = STDIN.noecho(&:gets).chomp
+end
+
+if $degree.nil?
+  print "Your degree (as seen in the LSF under Startseite -> Prüfungsverwaltung -> HTML-Ansicht ihrer erbrachten Leistungen, e.g. 'Abschluss Master of Science'): "
+  $degree = gets.chomp
+end
+
+puts "\nWorking...\n"
 
 login_post_target = URI.parse('https://campusonline.uni-ulm.de/qislsf/rds?state=user&type=1&category=auth.login&startpage=portal.vm&breadCrumbSource=portal')
 
