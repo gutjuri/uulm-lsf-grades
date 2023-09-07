@@ -1,4 +1,4 @@
-Update: As Uni Ulm no longer offers a HTML view of one#s grades, this project does no longer work.
+Update: As Uni Ulm no longer offers a HTML view of one's grades, this project does no longer work.
 
 # uulm-lsf-grades
 
